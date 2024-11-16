@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Soop 시참용 랜덤 뽑기",
+  "version": "1.0",
+  "description": "Soop에서 시청자들과 함께 즐길 수 있는 랜덤 뽑기 게임입니다.",
+  "icons": {
+    "16": "./icon.png",
+    "48": "./icon.png",
+    "128": "./icon.png"
+  },
+  "action": {
+    "default_popup": "./broadcast_screen.html",
+    "default_icon": "./icon.png"
+  },
+  "permissions": [],
+  "background": {
+    "service_worker": "./assets/background.js"
+  },
+  "content_security_policy": {
+   "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "./broadcast_screen.html",
+        "./streamer_screen.html",
+        "./icon.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
